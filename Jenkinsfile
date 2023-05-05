@@ -26,6 +26,7 @@ pipeline {
               sh 'docker build -t caloosha/numeric-apps:""$GIT_COMMIT"" .'
               sh 'docker push -t caloosha/numeric-apps:""$GIT_COMMIT""'
             }
+            }
         }
      
     }
