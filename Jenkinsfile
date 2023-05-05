@@ -19,6 +19,14 @@ pipeline {
               }
             }
         }    
+         stage('docker build') {
+            steps {
+              withDockerRegistry([credentialsId:'docker-hub', url:""]) {
+              sh 'printenv'
+              sh 'docker build -t caloosha/numeric-apps:""$GIT_COMMIT"" .'
+              sh 'docker push -t caloosha/numeric-apps:""$GIT_COMMIT""'
+            }
+        }
      
     }
 }
