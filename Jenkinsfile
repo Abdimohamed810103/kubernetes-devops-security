@@ -13,7 +13,7 @@ pipeline {
               sh "mvn test"
             }
             post {
-              alweys{
+              always{
                 junit "target/surefire-reports/*.xml"
                 jacoco execPattern "target/jacoco.exec"
               }
