@@ -21,7 +21,7 @@ pipeline {
         }    
          stage('docker build a') {
             steps {
-              withDockerRegistry([credentialsId:'docker-hub', url:""]) {
+              withDockerRegistry([credentialsId:'dockerd', url:""]) {
               sh 'printenv'
               sh 'docker build -t caloosha/numeric-apps:""$GIT_COMMIT"" .'
               sh 'docker push -t caloosha/numeric-apps:""$GIT_COMMIT""'
