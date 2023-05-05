@@ -19,7 +19,7 @@ pipeline {
               }
             }
         }    
-         stage('docker build ab') {
+         stage('docker build abd') {
             steps {
               withDockerRegistry([credentialsId:"docker-hub", url:""]) {
               sh 'printenv'
